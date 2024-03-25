@@ -1,7 +1,13 @@
 import React from 'react';
 
-export default function Grid() {
+type ChildrenProps = {
+    children: React.ReactNode;
+}
+
+export default function Grid({children}: ChildrenProps) {
     return (
-        <div>Grid</div>
+        <ul className='grid auto-rows-max gap-6 xs:grid-cols-2 lg:grid-cols-4'>
+            {children}
+        </ul>
     );
 }
