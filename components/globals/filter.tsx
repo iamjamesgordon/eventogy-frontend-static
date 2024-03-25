@@ -1,5 +1,6 @@
 import React from 'react';
 import ButtonRounded from './buttons/buttonRounded';
+import ButtonIcon from './buttons/buttonIcon';
 
 export default function Filter() {
     return (
@@ -28,6 +29,19 @@ export default function Filter() {
                 />
             </div>
             <div className='flex flex-wrap align-middle'>
+                <ButtonIcon
+                    type='grid'
+                    active={true}
+                />
+
+                <ButtonIcon
+                    type='list'
+                />
+
+                <ButtonIcon
+                    type='sliders'
+                />
+
                 <ButtonRounded
                     label='Create New'
                     iconPos='right'
