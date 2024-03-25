@@ -15,7 +15,11 @@ export const metadata = {
   description: 'This is the Eventogy frontend dev task',
 };
 
-export default async function RootLayout({ children }) {
+type ChildrenProps = {
+  children: React.ReactNode;
+};
+
+export default async function RootLayout({ children }: ChildrenProps) {
   return (
     <html lang='en' className={inter.variable}>
       <Head>
