@@ -21,7 +21,7 @@ type Loader = {
 export default function Card({ post, index }: PostProps) {
 
     const myLoader = ({ src }: Loader) => {
-        return `https://source.unsplash.com/featured/300x30${index}?q=80`;
+        return `https://${src}/featured/600x600?q=8${index}/`;
     };
 
     // Setting classes here for svg to avoid duplicate code
@@ -35,11 +35,13 @@ export default function Card({ post, index }: PostProps) {
         >
             <figure className='relative block h-48 w-full overflow-hidden xs:h-32 md:h-48 lg:h-32'>
                 <Image
-                    width={300}
-                    height={300}
+                    width={600}
+                    height={600}
                     loader={myLoader}
                     src='source.unsplash.com'
                     alt='Eventogy logo'
+                    blurDataURL='data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCACeAJ4DASIAAhEBAxEB/8QAGQAAAwEBAQAAAAAAAAAAAAAAAQIDAAQF/8QAHBABAQEBAQEBAQEAAAAAAAAAAAECERIDITFB/8QAGQEAAwEBAQAAAAAAAAAAAAAAAQIDAAQF/8QAGBEBAQEBAQAAAAAAAAAAAAAAAAECETH/2gAMAwEAAhEDEQA/ADDQsNFHiZUh4nDwXTk8NCwYMWyZgEysYGAx2pRpaaMzAxoWszMeJ0WZjROswsYrkh4nDxwccmVIeEh4zpyaGhYJl8mYA6KsHoWhaFoma0LQtL0RN1ul63TQtMJZRh4nTQQhoeEsZhYS8cEp8pT+q5cfHDhSHicPG46snglg9Nx0ZN0LQ6FoqxrS2haW1jjaXpbS2synW6n0ZTQtVlNE5T5PCWKQ0LDw8LwRaCwceVFMpKZc/HnYVh5U5TShx1ZUlbpet03HRk1pbQtLaKsa0lrWp3QHg3RfRbovoo8U6aVGU+aMLYvmqZQzVsqQnFcqRPKkUgcNDBBZuPHUylFJUHl4ikp5UpTSs68qdbpOt0y+RtLaFpLWWjaqetNrSetFp5Bui+iWh0lHisp81CVXNGFsdGarmoYq2FIXi+Vco5VyrA4eGLBZuPGh5SGlQeZmHlN1OUes6Mn61pOhdGXya1PWmuk7plo2qnqjqp2lqka0Oh1onaKmaplLKuWlLV8LZQytlXJF81TNRzVJVYCspupym6Znkt0G65uvPkN1ul6HRVyboXRLot0K+TXRLot0W6bq0G0toWgS1SCMCHkStY2YrkmYpmDC1TKuUsqZVyVbNPKlKaVaArKbqUo+jM84OsFrk64uNaW1rSWj08G6JdF1pO6N1XJ7ovol0HoLV8qdNE5VMp2nPIfMDMUzCAOYpIEh5DQBh4WCrCnlHpOt1WAp0fSXpvR2coUS1x9cvC6qWqfVQ3W6wa0lrYb0jrQ9NmqezTTm9/qmNFunTl1Zq2HPh0YJ062YpmExFcxgNIeQJDQ8BmEKpCh0LWpbVIA9b0S0vTgUtMWuNFLSH0q+3N9GLUd1DdW259p6qmIS39W+dc/+r/ImvF47Pm6sOX5Or5tmnXwtlLCuVICkEIZSFAKYtPAJSWn0npSAW0vWoHhX/9k='
+                    placeholder='blur'
                 />
             </figure>
             <h2 className='my-4 block text-lg'>{post.name}</h2>
