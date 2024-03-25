@@ -26,10 +26,10 @@ export default async function PostsList() {
     console.log(posts);
     return (
         <Grid>
-            {posts?.map((post) => {
+            {posts?.map((post, index) => {
                 return (
                     <li>
-                       <Card post={post}></Card>
+                       <Card post={post} index={index}></Card>
                     </li>
                 );
             })}
