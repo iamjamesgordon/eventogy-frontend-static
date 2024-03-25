@@ -40,6 +40,7 @@ export default function Card({ post, index }: PostProps) {
                 />
             </figure>
             <h2 className='my-4 block text-lg'>{post.name}</h2>
+            <p className='text-sm'>London</p>
         </a>
     );
 
