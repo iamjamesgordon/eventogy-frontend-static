@@ -1,7 +1,16 @@
 import React from 'react';
+import Container from '../layouts/container';
 
-export default function PageTitle() {
+type ChildrenProps = {
+    children: React.ReactNode;
+};
+
+export default function PageTitle({children}: ChildrenProps) {
     return (
-        <div>Grid</div>
+        <div className='bg-white py-10'>
+            <Container>
+                <h1 className='text-3xl font-bold'>{children}</h1>
+            </Container>
+        </div>
     );
 }
