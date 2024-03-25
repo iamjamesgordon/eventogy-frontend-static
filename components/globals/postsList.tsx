@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import React from 'react';
 import Grid from '../layouts/grid';
 import Card from './card';
@@ -25,14 +26,16 @@ export default async function PostsList() {
     const posts = await getPosts();
     console.log(posts);
     return (
-        <Grid>
-            {posts?.map((post, index) => {
-                return (
-                    <li>
-                       <Card post={post} index={index}></Card>
-                    </li>
-                );
-            })}
-        </Grid>
+        <Suspense fallback={'Loading....'}>
+            <Grid>
+                {posts?.map((post, index) => {
+                    return (
+                        <li>
+                        <Card post={post} index={index}></Card>
+                        </li>
+                    );
+                })}
+            </Grid>
+        </Suspense>
     );
 }
