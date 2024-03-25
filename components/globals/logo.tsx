@@ -8,6 +8,7 @@ export default function Logo() {
         <Link
             href={{pathname: '/'}}
             title='Eventogy frontend test home'
+            className='mb-4 md:mb-0'
         >
             <Image
                 width={150}
