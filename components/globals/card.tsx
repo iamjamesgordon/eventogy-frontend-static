@@ -18,6 +18,11 @@ type Loader = {
     src: string;
 };
 
+function handleClick(e: React.MouseEvent) {
+    e.preventDefault();
+    console.log('preventing default for card component');
+}
+
 function dateFormat(date: string) {
     const newDate = new Date(Date.parse(date.replace(' ', 'T')));
 
@@ -40,6 +45,7 @@ export default function Card({ post, index }: PostProps) {
 
     return (
         <a
+            onClick={handleClick}
             title={`Click here to find more infomration about ${post.name}`}
             href={post.slug}
             className="relative block h-full rounded-b-xl bg-white pb-4 pl-4 pr-4 pt-6 shadow-md"
