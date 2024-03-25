@@ -18,6 +18,17 @@ type Loader = {
     src: string;
 };
 
+function dateFormat(date: string) {
+    const newDate = new Date(Date.parse(date.replace(' ', 'T')));
+
+    const weekDay = newDate.toLocaleDateString('en-UK', { weekday: 'long' });
+    const day = newDate.toLocaleDateString('en-UK', { day: 'numeric' });
+    const month = newDate.toLocaleDateString('en-UK', { month: 'long' });
+    const year = newDate.toLocaleDateString('en-UK', { year: 'numeric' });
+
+    return weekDay + " " + day + " " + month + ", " + year
+}
+
 export default function Card({ post, index }: PostProps) {
 
     const myLoader = ({ src }: Loader) => {
@@ -53,7 +64,7 @@ export default function Card({ post, index }: PostProps) {
                             className="block text-sm text-neutral-400"
                             dateTime={date}
                         >
-                            {date}
+                                {dateFormat(date)}
                         </time>
                     );
                 })}
