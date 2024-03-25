@@ -20,3 +20,23 @@ export default async function RootLayout({ children }) {
     </html>
   );
 }
+
+/*
+
+Components structure:
+
+Globals
+  - Button
+  - Posts List
+  - Page Title
+  - Card
+  - Filter
+  - Logo
+Header
+  - Search Bar
+  - Account
+Layouts
+  - Grid
+  - Container
+
+*/
