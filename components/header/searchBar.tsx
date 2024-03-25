@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-function handleSubmit(e) {
+function handleSubmit(e: React.FormEvent) {
     console.log('The search form submit has been prevented');
     e.preventDefault();
 }
