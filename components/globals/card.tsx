@@ -45,6 +45,19 @@ export default function Card({ post, index }: PostProps) {
                 />
             </figure>
             <h2 className='my-4 block text-lg'>{post.name}</h2>
+            <div className=''>
+                {post.data.scheduled_dates?.map((date, index) => {
+                    return (
+                        <time
+                            key={index}
+                            className="block text-sm text-neutral-400"
+                            dateTime={date}
+                        >
+                            {date}
+                        </time>
+                    );
+                })}
+            </div>
             <p className='text-sm'>London</p>
             <div className='mt-6 flex justify-between'>
                 <svg
