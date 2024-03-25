@@ -1,7 +1,19 @@
 import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import EventogyLogo from '../../public/eventogy-logo.svg';
 
 export default function Logo() {
     return (
-        <div>Logo</div>
+        <Link
+            href={{pathname: '/'}}
+            title='Eventogy frontend test home'
+        >
+            <Image
+                width={150}
+                src={EventogyLogo}
+                alt='The Eventogy logo'
+            />
+        </Link>
     );
 }
