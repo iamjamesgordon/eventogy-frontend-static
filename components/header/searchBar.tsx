@@ -5,7 +5,7 @@ export default function SearchBar() {
         <form>
             <label className='relative mt-2 md:mt-0' htmlFor='search-form'>
                 <input
-                    className='w-full py-1.5 pl-12 pr-6'
+                    className='w-full rounded-2xl bg-white py-1.5 pl-12 pr-6'
                     id='search-form'
                     type='search'
                     placeholder='Search Event, Attendees and Venues...'
