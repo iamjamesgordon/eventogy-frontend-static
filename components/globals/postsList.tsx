@@ -1,5 +1,6 @@
 import React from 'react';
 import Grid from '../layouts/grid';
+import Card from './card';
 
 type PostProps = {
     id: number;
@@ -28,7 +29,7 @@ export default async function PostsList() {
             {posts?.map((post) => {
                 return (
                     <li>
-                       {post.name}
+                       <Card post={post}></Card>
                     </li>
                 );
             })}
