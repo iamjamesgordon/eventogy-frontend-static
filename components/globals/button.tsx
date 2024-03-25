@@ -1,7 +1,11 @@
 import React from 'react';
 
-export default function Button(){
+type ChildrenProps = {
+    children: React.ReactNode;
+};
+
+export default function Button({children}: ChildrenProps){
     return (
-        <div>Button</div>
+        <div>{children}</div>
     );
 }
