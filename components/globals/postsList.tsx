@@ -5,37 +5,37 @@ import Card from './card';
 import Loader from './loader';
 
 type PostProps = {
-    id: number;
-    name: string;
-    slug: string;
-    data: {
-        scheduled_dates: string[];
-    }
+  id: number;
+  name: string;
+  slug: string;
+  data: {
+    scheduled_dates: string[];
+  };
 }[];
 
 async function getPosts(): Promise<PostProps> {
-    try {
-        const res = await fetch('https://www.eventogy.com/api/events.json');
-        const posts = await res.json();
-        return posts.data;
-    } catch (error) {
-        throw new Error('faled to fetch posts' + error);
-    }
+  try {
+    const res = await fetch('https://www.eventogy.com/api/events.json');
+    const posts = await res.json();
+    return posts.data;
+  } catch (error) {
+    throw new Error('faled to fetch posts' + error);
+  }
 }
 
 export default async function PostsList() {
-    const posts = await getPosts();
-    return (
-        <Suspense fallback={<Loader/>}>
-            <Grid>
-                {posts?.map((post, index) => {
-                    return (
-                        <li>
-                        <Card post={post} index={index}></Card>
-                        </li>
-                    );
-                })}
-            </Grid>
-        </Suspense>
-    );
+  const posts = await getPosts();
+  return (
+    <Suspense fallback={<Loader />}>
+      <Grid>
+        {posts?.map((post, index) => {
+          return (
+            <li>
+              <Card post={post} index={index}></Card>
+            </li>
+          );
+        })}
+      </Grid>
+    </Suspense>
+  );
 }
