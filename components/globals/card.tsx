@@ -61,7 +61,7 @@ export default function Card({ post, index }: PostProps) {
                     placeholder='blur'
                 />
             </figure>
-            <h2 className='my-4 block text-lg'>{post.name}</h2>
+            <h2 className='my-4 block text-lg h-14'>{post.name}</h2>
             <div className=''>
                 {post.data.scheduled_dates?.map((date, index) => {
                     return (
