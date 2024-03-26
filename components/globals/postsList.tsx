@@ -25,7 +25,6 @@ async function getPosts(): Promise<PostProps> {
 
 export default async function PostsList() {
     const posts = await getPosts();
-    console.log(posts);
     return (
         <Suspense fallback={<Loader/>}>
             <Grid>
