@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import React from 'react';
 import Grid from '../layouts/grid';
 import Card from './card';
+import Loader from './loader';
 
 type PostProps = {
     id: number;
@@ -26,7 +27,7 @@ export default async function PostsList() {
     const posts = await getPosts();
     console.log(posts);
     return (
-        <Suspense fallback={'Loading....'}>
+        <Suspense fallback={<Loader/>}>
             <Grid>
                 {posts?.map((post, index) => {
                     return (
